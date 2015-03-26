@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension point="org.eclipse.ui.handlers">
+      <handler
+            commandId="SourceGenerator.ServiceComand"
+            class="sourcegenerator.handlers.ServiceHandler">
+      </handler>
+   </extension>
+
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+
+    <extension point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:org.eclipse.jdt.ui.PackageExplorer">
+         <menu
+               id="SourceGenerator"
+               icon="icons/skull.gif"
+               label="Source  Generator">
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="popup:SourceGenerator?after=additions">
+         <command
+               commandId="SourceGenerator.ServiceComand"
+               label="Generate..."
+               style="push">
+         </command>
+      </menuContribution>
+    </extension>
+
+
+</plugin>
